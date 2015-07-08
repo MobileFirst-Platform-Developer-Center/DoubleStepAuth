@@ -32,7 +32,7 @@
 		</connectionPolicy>
 	</connectivity>
 
-	<procedure name="submitAuthentication" securityTest="wl_unprotected"/>
-	<procedure name="submitAuthentication2" securityTest="wl_unprotected"/>
+	<procedure name="submitAuthenticationStep1" securityTest="wl_unprotected"/>
+	<procedure name="submitAuthenticationStep2" securityTest="wl_unprotected"/>
 	<procedure name="getSecretData" securityTest="DoubleStepAuthAdapter-securityTest"/>
 </wl:adapter>

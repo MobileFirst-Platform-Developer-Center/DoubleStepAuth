@@ -22,7 +22,7 @@ function onAuthRequired(headers, errorMessage){
 	};
 }
 
-function submitAuthentication(username, password){
+function submitAuthenticationStep1(username, password){
 	if (username === "user" && password === "password"){
 		WL.Logger.debug("Step 1 :: SUCCESS");
 		var clientId = WL.Server.getClientId();
@@ -54,7 +54,7 @@ function submitAuthentication(username, password){
 	}
 }
 
-function submitAuthentication2(answer){
+function submitAuthenticationStep2(answer){
 	var clientId = WL.Server.getClientId();	
 	var response = readUserIdentityFromDB(dbName, clientId);
 	if (response){
@@ -108,7 +108,7 @@ function writeUserIdentityToDB(db, document){
 		 var response = WL.Server.invokeHttp(input);
 		 var responseString = "" + response.statusCode;
 		 
-		//Checking if the invocation was successful
+		//Checking if the invocation was successful - status code = 2xx
 		 if (responseString.indexOf('2') === 0){
 			 return response;
 		 }
@@ -152,7 +152,7 @@ function readUserIdentityFromDB(db, key){
 	 var response = WL.Server.invokeHttp(input);
 	 var responseString = "" + response.statusCode;
 	 
-	 //Checking if the invocation was successful
+	 //Checking if the invocation was successful - status code = 2xx
 	 if (responseString.indexOf('2') === 0){
 		 return response;
 	 }

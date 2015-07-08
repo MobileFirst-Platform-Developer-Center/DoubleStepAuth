@@ -63,7 +63,7 @@ $("#AuthStep1Submit").bind('click', function () {
 
 	var invocationData = {
 		adapter : "AuthAdapter",
-		procedure : "submitAuthentication",
+		procedure : "submitAuthenticationStep1",
 		parameters : [ username, password ]
 	};
 
@@ -75,7 +75,7 @@ $("#AuthStep2Submit").bind('click', function () {
 
 	var invocationData = {
 		adapter : "AuthAdapter",
-		procedure : "submitAuthentication2",
+		procedure : "submitAuthenticationStep2",
 		parameters : [ answer ]
 	};
 
