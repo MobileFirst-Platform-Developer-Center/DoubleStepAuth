@@ -65,7 +65,7 @@ function submitAuthenticationStep2(answer){
 			var doc = JSON.parse(response.text);
 			var userIdentity = doc.userIdentity;
 			WL.Logger.debug("Step 2 :: SUCCESS");
-			WL.Server.setActiveUser("DoubleStepAuthRealm", userIdentity);
+			WL.Server.setActiveUser("TwoStepAuthRealm", userIdentity);
 			WL.Logger.debug("Authorized access granted");
 			
 			var response = deleteUserIdentityFromDB(dbName, doc); 

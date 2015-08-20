@@ -14,9 +14,9 @@
 * limitations under the License.
 */
 
-var doubleStepAuthRealmChallengeHandler = WL.Client.createChallengeHandler("DoubleStepAuthRealm");
+var TwoStepAuthRealmChallengeHandler = WL.Client.createChallengeHandler("TwoStepAuthRealm");
 
-doubleStepAuthRealmChallengeHandler.isCustomResponse = function(response) {
+TwoStepAuthRealmChallengeHandler.isCustomResponse = function(response) {
 	if (!response || !response.responseJSON	|| response.responseText === null) {
 		return false;
 	}
@@ -27,7 +27,7 @@ doubleStepAuthRealmChallengeHandler.isCustomResponse = function(response) {
 	}
 };
 
-doubleStepAuthRealmChallengeHandler.handleChallenge = function(response){
+TwoStepAuthRealmChallengeHandler.handleChallenge = function(response){
 	var authRequired = response.responseJSON.authRequired;
 
 	if (authRequired == true){
@@ -55,7 +55,7 @@ doubleStepAuthRealmChallengeHandler.handleChallenge = function(response){
 	} else if (authRequired == false){
 		$("#AppDiv").show();
 		$("#AuthDiv").hide();
-		doubleStepAuthRealmChallengeHandler.submitSuccess();
+		TwoStepAuthRealmChallengeHandler.submitSuccess();
 	}
 };
 
@@ -70,7 +70,7 @@ $("#AuthStep1Submit").bind('click', function () {
 		parameters : [ username, password ]
 	};
 
-	doubleStepAuthRealmChallengeHandler.submitAdapterAuthentication(invocationData, {});
+	TwoStepAuthRealmChallengeHandler.submitAdapterAuthentication(invocationData, {});
 });
 
 $("#AuthStep2Submit").bind('click', function () {
@@ -82,13 +82,13 @@ $("#AuthStep2Submit").bind('click', function () {
 		parameters : [ answer ]
 	};
 
-	doubleStepAuthRealmChallengeHandler.submitAdapterAuthentication(invocationData, {});
+	TwoStepAuthRealmChallengeHandler.submitAdapterAuthentication(invocationData, {});
 });
 
 $(".AuthCancelButton").bind('click', function () {
 	$("#AppDiv").show();
 	$("#AuthDiv").hide();
-	doubleStepAuthRealmChallengeHandler.submitFailure();
+	TwoStepAuthRealmChallengeHandler.submitFailure();
 });
 
 

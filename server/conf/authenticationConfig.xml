@@ -72,14 +72,14 @@ limitations under the License.
        		<test realm="SubscribeServlet" isInternalUserID="true"/>
        	</customSecurityTest>
 
-        <customSecurityTest name="DoubleStepAuthAdapter-securityTest">
-            <test isInternalUserID="true" realm="DoubleStepAuthRealm"/>
+        <customSecurityTest name="TwoStepAuthAdapter-securityTest">
+            <test isInternalUserID="true" realm="TwoStepAuthRealm"/>
         </customSecurityTest>
 
 	</securityTests>
 
 	<realms>
-		<realm loginModule="AuthLoginModule" name="DoubleStepAuthRealm">
+		<realm loginModule="AuthLoginModule" name="TwoStepAuthRealm">
 			<className>com.worklight.integration.auth.AdapterAuthenticator</className>
 			<parameter name="login-function" value="AuthAdapter.onAuthRequired"/>
 			<parameter name="logout-function" value="AuthAdapter.onLogout"/>

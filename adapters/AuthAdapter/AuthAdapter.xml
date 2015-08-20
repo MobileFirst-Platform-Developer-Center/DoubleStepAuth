@@ -24,7 +24,7 @@ limitations under the License.
 	<connectivity>
 		<connectionPolicy xsi:type="http:HTTPConnectionPolicyType">
 			<protocol>http</protocol>
-			<domain>liorbu.cloudant.com</domain>
+			<domain>$USERNAME.cloudant.com</domain>
 			<port>80</port>
 			<connectionTimeoutInMilliseconds>30000</connectionTimeoutInMilliseconds>
 			<socketTimeoutInMilliseconds>30000</socketTimeoutInMilliseconds>
@@ -38,5 +38,5 @@ limitations under the License.
 
 	<procedure name="submitAuthenticationStep1" securityTest="wl_unprotected"/>
 	<procedure name="submitAuthenticationStep2" securityTest="wl_unprotected"/>
-	<procedure name="getSecretData" securityTest="DoubleStepAuthAdapter-securityTest"/>
+	<procedure name="getSecretData" securityTest="TwoStepAuthAdapter-securityTest"/>
 </wl:adapter>

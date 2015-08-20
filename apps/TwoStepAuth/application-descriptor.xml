@@ -15,9 +15,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <!-- Attribute "id" must be identical to application folder name -->
-<application xmlns="http://www.worklight.com/application-descriptor" id="DoubleStepAuth" platformVersion="7.1.0.00.20150628-0730">
-    <displayName>DoubleStepAuth</displayName>
-    <description>DoubleStepAuth</description>
+<application xmlns="http://www.worklight.com/application-descriptor" id="TwoStepAuth" platformVersion="7.1.0.00.20150819-0630">
+    <displayName>TwoStepAuth</displayName>
+    <description>TwoStepAuth</description>
     <author>
         <name>application's author</name>
         <email>application author's e-mail</email>
@@ -27,12 +27,5 @@ limitations under the License.
     <mainFile>index.html</mainFile>
     <features/>
     <thumbnailImage>common/images/thumbnail.png</thumbnailImage>
-    <iphone bundleId="com.DoubleStepAuth" version="1.0">
-        <worklightSettings include="false"/>
-        <security>
-            <encryptWebResources enabled="false"/>
-            <testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3"/>
-        </security>
-    </iphone>
-    <userIdentityRealms>DoubleStepAuthRealm</userIdentityRealms>
+    <userIdentityRealms>TwoStepAuthRealm</userIdentityRealms>
 </application>

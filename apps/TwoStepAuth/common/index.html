@@ -17,7 +17,7 @@ limitations under the License.
 <html>
     	<head>
     		<meta charset="UTF-8">
-    		<title>Double Step Adapter Based Authentication</title>
+    		<title>Two-Step Adapter Based Authentication</title>
     		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
     		<!--
     			<link rel="shortcut icon" href="images/favicon.png">
@@ -28,13 +28,13 @@ limitations under the License.
     	</head>
     	<body style="display: none;">
     		<div id="header">
-				<h1>Double Step Adapter Based Authentication</h1>
+				<h1>Two-Step Adapter Based Authentication</h1>
 			</div>
 			
 			<div id="wrapper">	
     			<div id="AppDiv">				
             		<input type="button" id="getSecretDataButton" value="Get secret data" onclick="getSecretData()" />
-            		<input type="button" class="appButton" value="Logout" onclick="WL.Client.logout('DoubleStepAuthRealm', {onSuccess:WL.Client.reloadApp})" />
+            		<input type="button" class="appButton" value="Logout" onclick="WL.Client.logout('TwoStepAuthRealm', {onSuccess:WL.Client.reloadApp})" />
             		<div id="ResponseDiv"></div>
         		</div>
         
@@ -58,7 +58,7 @@ limitations under the License.
         	</div>
     		<script src="js/initOptions.js"></script>
     		<script src="js/main.js"></script>
-    		<script src="js/DoubleStepAuthRealmChallengeProcessor.js"></script>
+    		<script src="js/TwoStepAuthRealmChallengeProcessor.js"></script>
     		<script src="js/messages.js"></script>
     	</body>
 </html>
